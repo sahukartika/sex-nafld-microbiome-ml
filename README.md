@@ -29,7 +29,7 @@ After downloading, place them in the root directory of this repository before ru
 | `01_msp_to_phylum_aggregation.py` | Aggregates MSPs to phylum-level abundance                     |
 | `02_groupwise_split.py`           | Extracts and saves phylum data by disease and sex groups      |
 | `model_comparison.py`             | Compares classifiers (XGBoost, RF, GB, Extra Trees)           |
-| `model.py`                        | Final modeling and SHAP value interpretation                  |
+| `finalmodel.py`                        | Final modeling and SHAP value interpretation                  |
 | `mspmap.xlsx`                     | Mapping of MSPs to their corresponding phylum                 |
 | `README.md`                       | Instructions for reproducing the results                      |
 | `.gitignore`                      | Prevents uploading temporary and cache files                  |
@@ -94,7 +94,7 @@ python model_comparison.py
 ## 🧠 Step 4: Final Model and SHAP Interpretation
 
 ```bash
-python model.py
+python finalmodel.py
 ```
 
 * Uses best-performing model per classification task
