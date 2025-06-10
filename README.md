@@ -32,7 +32,7 @@ After downloading, place them in the root directory of this repository before ru
 | `finalmodel.py`                        | Final modeling and SHAP value interpretation                  |
 | `mspmap.xlsx`                     | Mapping of MSPs to their corresponding phylum                 |
 | `README.md`                       | Instructions for reproducing the results                      |
-| `.gitignore`                      | Prevents uploading temporary and cache files                  |
+
 
 ---
 
