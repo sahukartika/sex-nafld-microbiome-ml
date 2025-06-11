@@ -38,7 +38,7 @@ After downloading, place them in the root directory of this repository before ru
 
 ## ⚙️ Step-by-Step Instructions
 
-### ▶️ Step 1: Preprocessing — Aggregate MSPs to Phyla
+### Step 1: Preprocessing — Aggregate MSPs to Phyla
 
 ```bash
 python 01_msp_to_phylum_aggregation.py
@@ -48,7 +48,7 @@ python 01_msp_to_phylum_aggregation.py
 ```markdown
 ```
 
-### ▶️ Step 2: Groupwise Data Extraction
+###  Step 2: Groupwise Data Extraction
 
 ```bash
 python 02_groupwise_split.py
@@ -66,7 +66,7 @@ These files are used for group-specific classification tasks.
 
 ---
 
-## 🤖 Step 3: Model Comparison
+## Step 3: Model Comparison
 
 ```bash
 python model_comparison.py
@@ -91,7 +91,7 @@ python model_comparison.py
 
 ---
 
-## 🧠 Step 4: Final Model and SHAP Interpretation
+## Step 4: Final Model and SHAP Interpretation
 
 ```bash
 python finalmodel.py
@@ -106,7 +106,7 @@ python finalmodel.py
 
 
 
-## 🧠 Model Architecture and Interpretation
+## Model Architecture and Interpretation
 
 ### `model.py` — Final Classification and SHAP Interpretation
 
@@ -114,7 +114,7 @@ This script performs three core classification tasks using phylum-level gut micr
 
 ---
 
-### 🔍 **Task 1: Disease Classification (Healthy vs NAFLD)**
+### **Task 1: Disease Classification (Healthy vs NAFLD)**
 
 * Objective: Identify whether the gut microbial composition can distinguish NAFLD patients from healthy individuals.
 * Model Used: XGBoost
@@ -160,7 +160,7 @@ This script performs three core classification tasks using phylum-level gut micr
 
 ---
 
-### 🔍 SHAP Analysis Functionality
+### SHAP Analysis Functionality
 
 * SHAP values are calculated for the best-performing model (disease classification).
 * Visualizations are saved as `.png` to provide model interpretability at the feature level.
@@ -168,7 +168,7 @@ This script performs three core classification tasks using phylum-level gut micr
 
 ---
 
-### 📊 Output Summary
+### Output Summary
 
 Each modeling task outputs:
 
@@ -184,12 +184,12 @@ SHAP_Disease_Classification_XGBoost.png
 
 ---
 
-### 🧪 Reproducibility
+### Reproducibility
 
 All random operations (e.g., undersampling, train/test split) are seeded with `random_state=42` to ensure reproducibility.
 
 ---
-## ✉️ Contact
+## Contact
 
 For any questions or issues, please contact:
 
