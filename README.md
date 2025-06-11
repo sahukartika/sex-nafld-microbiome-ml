@@ -104,9 +104,91 @@ python finalmodel.py
   * SHAP summary plots for disease classification 
   * Final classification performance metrics
 
+
+
+## 🧠 Model Architecture and Interpretation
+
+### `model.py` — Final Classification and SHAP Interpretation
+
+This script performs three core classification tasks using phylum-level gut microbiota data:
+
 ---
 
+### 🔍 **Task 1: Disease Classification (Healthy vs NAFLD)**
 
+* Objective: Identify whether the gut microbial composition can distinguish NAFLD patients from healthy individuals.
+* Model Used: XGBoost
+* Data Used: Combined `Healthy_male`, `Healthy_female`, `NAFLD_male`, and `NAFLD_female` sheets.
+* Preprocessing:
+
+  * Log-transformation of relative phylum abundances.
+  * Class balancing via random undersampling.
+* Interpretability:
+
+  * SHAP (SHapley Additive exPlanations) used to visualize the contribution of each phylum to the classification.
+  * Generates `SHAP_Disease_Classification.png` summarizing the top contributing features.
+
+---
+
+### Task 2: Sex Classification in Healthy Individuals
+
+* Objective: Predict the biological sex of individuals within the healthy group using their gut microbiota profile.
+* Model Used: Random Forest
+* Data Used: Subset of data labeled `Healthy_male` and `Healthy_female`.
+* Preprocessing:
+
+  * Same log transformation.
+  * Class balancing across sexes.
+* **Output**:
+
+  * Classification report with accuracy, precision, recall, F1-score.
+  * ROC curve plotted for model evaluation.
+
+---
+
+### Task 3: Sex Classification in NAFLD Patients
+
+* Objective: Assess whether gut microbiota signatures can reveal sex differences in patients already diagnosed with NAFLD.
+* Model Used: XGBoost
+* Data Used: Subset labeled `NAFLD_male` and `NAFLD_female`.
+* Interpretability:
+
+  * SHAP not used (for brevity and interpretability).
+* Evaluation:
+
+  * ROC and classification metrics included.
+
+---
+
+### 🔍 SHAP Analysis Functionality
+
+* SHAP values are calculated for the best-performing model (disease classification).
+* Visualizations are saved as `.png` to provide model interpretability at the feature level.
+* Bar plots rank phyla based on their mean absolute SHAP contribution.
+
+---
+
+### 📊 Output Summary
+
+Each modeling task outputs:
+
+* Textual classification report: Precision, recall, F1-score
+* ROC-AUC curve
+* SHAP plot (where applicable)
+
+Example file generated:
+
+```plaintext
+SHAP_Disease_Classification_XGBoost.png
+```
+
+---
+
+### 🧪 Reproducibility
+
+All random operations (e.g., undersampling, train/test split) are seeded with `random_state=42` to ensure reproducibility.
+
+---
 ## ✉️ Contact
 
 For any questions or issues, please contact:
